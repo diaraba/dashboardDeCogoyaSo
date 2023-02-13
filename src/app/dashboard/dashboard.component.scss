@@ -1,0 +1,96 @@
+.border{
+  height: 100%;
+ 
+  position: relative;
+  // left: 10%; 
+  border-radius: 10px;
+  
+  background-color: #C8FCEA;
+}
+button {
+  border:  1px;
+  border-radius: 10px;
+  background-color:#00754B;
+  margin-top: 20px;
+  height: 40px;
+  margin-left: 40px;
+
+}
+
+.menu-button {
+  width: auto;
+  
+  display: flex;
+  justify-content: flex-start;
+  font-size: 1rem;
+
+
+ 
+}/* 
+.menu-button .mat-icon {
+  margin-right: 8px;
+} */
+
+
+.gauche{
+  border-top-left-radius: 10px;
+    }
+
+    .droite{
+        border-top-right-radius: 10px;
+          }
+th{
+background-color: #6A9A8B;
+border: none;
+color: black;
+padding: 5px;
+font-size: 20px!important;
+}
+tr td{
+border-bottom: black;
+font-size: 1rem!important;
+width: fit-content;
+padding: 5px;
+}
+.conatiner{
+}
+
+.visibility{
+color: #00754B;
+cursor: pointer;
+
+}
+.delete{
+color: #F8325E;
+cursor: pointer;
+}
+.update{
+color: #67C25E;
+cursor: pointer;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_span{
+color:black;
+font-size: 28px;
+font-weight: 500;
+}
+.header_content{
+  font-size: 18px;
+  font-weight: 300;   
+}
+.content{
+  position: relative;
+  left: 2%;
+}
+// .wholetable{
+//     position: relative;
+//     left: 2%;
+// }
+.icon{
+  font-size: 28px;
+}

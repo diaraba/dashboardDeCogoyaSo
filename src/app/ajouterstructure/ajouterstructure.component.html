@@ -1,0 +1,161 @@
+<div class="annonce col-md-12">
+
+
+    <div class="container user-avatar">
+
+        <div class="simg">
+
+            <!-- <ion-avatar class="position">
+            <img alt="Silhouette of a person's head" src="{{picture}}{{profiles.image}}" />
+          </ion-avatar> -->
+        </div>
+        <div class="status-overlay ">
+            <label>
+                <!-- <ion-icon class="IONic" name="camera-outline" color="secondary">
+              <input id="files" style="visibility:hidden;" type="file" class="form-control" required image
+              (change)="chargeImage($event)" >
+            </ion-icon> -->
+                <i class='bx bx-camera IONic'>
+                    <input id="files" style="visibility:hidden;" type="file" class="form-control" required image
+                        (change)="chargeImage($event)">
+                </i>
+            </label>
+
+        </div>
+    </div>
+    <div class="imageprofile mx-auto  py-3 container">
+
+        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle position shadow-4"
+            style="width: 150px; height: 150px;" alt="Avatar" />
+
+    </div>
+    <div class="row info" style="margin-top: 40px;">
+        <div class="nom" style="text-align: center;margin-top: 50px; color: black; font-size: 25px;">
+            <b>Créer structure</b>
+        </div>
+        <!-- <div class="edit">
+    
+          <ion-buttons class="ionModif">
+            <ion-button routerLink="/modifierprofil">
+              <ion-icon name="create-outline" ></ion-icon>
+              Modifier profil
+            </ion-button>
+          </ion-buttons>
+          
+          <ion-buttons class="ionModif">
+            <ion-button routerLink="/tabs/modifiercompte">
+              <ion-icon name="create-outline"></ion-icon>
+              Modifier compte
+            </ion-button>
+    
+          </ion-buttons>
+           <ion-button>
+            Modifier profil
+          </ion-button>
+    
+          <ion-button>
+            Modifier compte
+          </ion-button> 
+        </div> -->
+        <div class="information" style="color:black;margin-top: 40px;margin-bottom: 40px;">
+
+
+
+            <div class="content1">
+                <div class="content-item">
+                    <form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Alias </label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" "
+                                ngModel="" name="nom" [(ngModel)]="form.nom" #nom="ngModel">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" "
+                                name="form.prenom" [(ngModel)]="form.prenom" #form.prenom="ngModel">
+                        </div>
+
+
+                        <!-- <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="{{content.email}}"  name="email" [(ngModel)]="form.email" #form.email="ngModel">
+                </div> -->
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Mot de passe</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" "
+                                name="numero" [(ngModel)]="form.numero">
+                        </div>
+               
+
+                        <label>Role</label>
+                        <div class="mb-3">
+                            <select interface="popover" [(ngModel)]="role" name="role"style="color: black; font-size: 18px;"
+                                class="selectcadre">
+                                <option value="structure" style="color: black; font-size: 18px;">Structure
+                                </option>
+                            </select>
+                        </div>
+
+                        <label>Statut</label>
+                        <div class="mb-3">
+
+                            <select interface="popover"  class="selectcadre" [(ngModel)]="statut" name="statut" style="color: black; font-size: 18px; "
+                                >
+                                <option value="public" style="color: black; font-size: 18px;">Public
+                                </option>
+                                <option value="prive" style="color: black; font-size: 18px;">Privé
+                                </option>
+                            </select>
+                        </div>
+
+
+
+
+                        <div class="choice">
+                            <legend>Activités :</legend>
+
+                            <div>
+                                <input type="checkbox" id="scales" name="scales" (click)="onInterestSelected(null)">
+                                <label for="scales" class="ms-2">INDUSTRIE</label>
+                            </div>
+
+                            <!-- <div>
+                  <input type="checkbox" id="horns" name="horns">
+                  <label for="horns">Formation</label>
+                </div>
+        
+                
+                <div>
+                  <input  type="checkbox" id="horns" name="horns">
+                  <label for="horns">Formation</label>
+                </div>
+        
+                
+                <div>
+                  <input  type="checkbox" id="horns" name="horns">
+                  <label for="horns">Formation</label>
+                </div>
+        
+                
+                <div>
+                  <input  type="checkbox" id="horns" name="horns">
+                  <label for="horns">Formation</label>
+                </div> -->
+                        </div>
+
+
+                        <div class="containerbutton text-center">
+                            <button type="submit" class="btn btn-outline border">
+                                <p> Envoyer </p>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,122 @@
+
+
+  .img{
+    // width: 100%;
+    width: 140px;
+    height: 140px;
+    border: 1px solid #C8FCEA;
+    border-radius: 100%;
+    box-shadow: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 35px;
+  }
+
+  .menu-button {
+    width: auto;
+    margin-left: 1%;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 1rem;  
+    border: 1px solid #6A9A8B;
+}
+.menu-button:hover{
+    background-color: #6A9A8B;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+  .imageprofile{
+        display: flex;
+        justify-content: center;
+  }
+  // ion-item{
+  //   border-bottom: 1px solid red;
+  // }
+ .info{
+  
+  // background-color: #368E8C;
+  
+
+ }
+ .container{
+  padding: 20px;
+ }
+ span{
+  font-size: 14px;
+ }
+ .ionModif ion-button{
+  
+  
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 15px ;
+  background: #ffffff ;
+  border: 1px solid #C8FCEA;
+  color: color;
+  border-radius: 5px;
+ }
+
+ .annonce{
+    background: #ffffff ;
+    padding: 20px;
+ }
+ .champ{
+    box-sizing: border-box;
+    border: 1px solid #C8FCEA;
+    border-radius: 5px;
+    height: auto;
+    width: 100%;
+    background: rgba(106, 154, 139, 0.3);
+    margin-bottom: 20px;
+    display: inline-block;
+ }
+ .champcontent{
+     font-size: 10px;
+    position: relative;
+    bottom: 10px;
+    padding-left:7px ;
+ }
+ .champcontent1{
+    word-wrap: break-word;
+    font-size: 10px;
+    padding-left:7px ;
+ }
+ .champ1{
+    box-sizing: border-box;
+    border: 1px solid #C8FCEA;
+    border-radius: 5px;
+    height: auto;
+    background: rgba(106, 154, 139, 0.3);
+    margin-bottom: 20px;
+    display: inline-block;
+    justify-content: stretch;
+    font-weight: bold;
+
+ }
+ .champtitle{
+     font-size: 18px;
+     padding-left:7px ;
+ }
+ .information{
+     position: relative;
+     bottom: 60px;
+ }
+ .nom{
+     position: relative;
+     bottom: 60px;
+ }
+ .edit{
+     display: flex;  
+     height: 35px; 
+     background: #FFFFFF;
+     justify-content: space-between;
+     position: relative;
+     bottom: 50px;
+ }
+ .edit ion-button{
+     font-size: 8px;
+ }

@@ -1,0 +1,137 @@
+.sidebar::-webkit-scrollbar {
+    display: none;
+  }
+mat-toolbar {
+    /* background: #fff; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   z-index: 20;
+    color:#DDF8D7
+    /* margin-top: 30px;
+    position: fixed; */
+    
+    
+
+}
+.logContent{
+    cursor: pointer;
+}
+.logIcon{
+    margin-right: 0px;
+    position: relative;
+    top: 4px;
+    color:  #FFD885;
+}
+.sideButtom{
+    position: relative;
+    top: -14px;
+}
+.dessous{
+    position: relative;
+    top: 30px;
+    background-color: #F8325E;
+    color: white;   
+}
+mat-icon.mat-icon.notranslate.material-icons.mat-icon-no-color.ng-star-inserted {
+    color: black;
+}
+
+.text1{
+    color: #00754B;
+}
+
+mat-sidenav-container{
+    margin-bottom: 120%;
+}
+
+mat-sidenav-content nav{
+    border-bottom: 10px;
+    margin: 16px;
+    margin-left: 32px;
+    margin-top: 40px;
+    width: 100px;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.decote[_ngcontent-tcs-c42] {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+}
+.nav.mat-elevation-z8 {
+    margin-top: 69px;
+    margin-left: 17px;
+    width: 80%;
+    position: fixed;
+    border-radius: 10px;
+}
+
+mat-sidenav {
+    margin: 16px;
+    width: 200px;
+    border-right: none;
+    background: #6A9A8B;
+    color: black;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+
+.avatar {
+    margin-top: 1px;
+    background-color: #FFF;
+    position: relative;
+    width: 100px;
+    height: 100px;
+     border-radius: 10%;
+     border: none;
+}
+.side{
+    margin-top: 60px;
+}
+
+button{
+    border:  1px;
+    border-radius: 10px;
+    background-color:#C8FCEA;
+    margin-top: 20px;
+    height: 40px;
+
+}
+
+
+
+.content {
+    /* height: calc(100vh - 28px); */
+    border-radius: 10px;
+    margin: 16px;
+    margin-left: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2rem;
+    color: lightgray;
+}
+
+mat-sidenav-container {
+    height: calc(100vh - 65px);
+}
+
+.menu-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 1rem;
+
+   
+}
+.menu-button .mat-icon {
+    margin-right: 8px;
+}

@@ -1,0 +1,86 @@
+.container{
+    width: 100%;
+}
+
+.profile-img-card{
+    // /* margin-left: 160px;
+    // margin-right: 975px; */
+    width: 100%;
+    margin-bottom: 100px;
+    background-color: #6A9A8B;
+}
+label{
+    font-size: 1.5rem;
+}
+.signin{
+    background-color: #00754B;
+    border: none;
+}
+.optionLogin{
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.svg{
+    height: 490px;
+    // position: relative;
+    // left: 30%;
+}
+
+.avatar {
+    margin-top: 1px;
+    //background-color: #00754B;
+    position: relative;
+    width: 100px;
+    height: 100px;
+     border-radius: 10%;
+}
+.header{
+    border:1px solid #6A9A8B;
+    padding: 15px;
+}
+span{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+.focus{
+    font-size: 28px;
+}
+//////////////////////////////////////////////////////////forgot password
+
+
+form .button input:disabled {
+    background: linear-gradient(-135deg, #C8FCEA, #6A9A8B );
+    opacity: 0.7;
+ }
+
+ span.help-block {
+    color: #6A9A8B;
+}
+
+
+form .button{
+    width:60%;
+    height: 45px;
+    margin-left: 20%;
+}
+
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg,  #6A9A8B, #00754B);
+
+}

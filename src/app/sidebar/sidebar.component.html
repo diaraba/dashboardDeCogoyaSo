@@ -1,0 +1,92 @@
+<mat-toolbar class="mat-elevation-z8">
+
+
+    <p class="text1">Cogoya So</p>
+    
+    <!-- <div>
+      <p style="color: black;" class="logContent" routerLink="/login">Connexion <mat-icon class="logIcon">login</mat-icon></p>
+    </div> -->
+    <div class="sideButtom">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    </div>
+  
+  
+  </mat-toolbar>
+  <mat-sidenav-container class="sidebar">
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8 py-4"  >
+      <img class="avatar mat-elevation-z8" src="../assets/LOGO.png" />
+      <div class="side mr-auto" routerLinkActive="active">
+        <button  mat-button class="menu-button" routerLink="dashboard" >
+          <mat-icon>dashboard</mat-icon>
+          <span>Tableau de bord</span>
+        </button>
+  
+  
+  
+        <button mat-button class="menu-button" routerLink="accueil" *ngIf="!showStructureBoard ">
+          <mat-icon>business</mat-icon>
+          <span>Accueil</span>
+        </button>
+  
+        <button mat-button class="menu-button" routerLink="avisoffre" *ngIf="!showStructureBoard">
+          <mat-icon>list_alt</mat-icon>
+          <span>Avis offre</span>
+        </button>
+  
+  
+        <button mat-button class="menu-button" routerLink="annonce" *ngIf="!showStructureBoard">
+          <mat-icon>flag</mat-icon>
+          <span>Annonce</span>
+        </button>
+        
+        <button mat-button class="menu-button" routerLink="structure">
+          <mat-icon>people</mat-icon>
+          <span>Structure</span>
+        </button>
+  
+        <button mat-button class="menu-button" routerLink="emploi">
+          <mat-icon>work</mat-icon>
+          <span>Emploi</span>
+        </button>
+  
+        <button mat-button class="menu-button" routerLink="projet">
+          <mat-icon>brightness_high</mat-icon>
+          <span>Projet</span>
+        </button>
+  
+  
+        <button mat-button class="menu-button" routerLink="profil">
+          <mat-icon>account_circle</mat-icon>
+          <span>Profil</span>
+        </button>
+  
+        <br>
+        <button mat-button class="menu-button dessous" (click)="logout()">
+          <mat-icon>power_settings_new</mat-icon>
+          <span>Déconnexion</span>
+        </button>
+      </div>
+    </mat-sidenav>
+  
+    <mat-sidenav-content >
+      <!-- <div class="nav mat-elevation-z8">
+      <button class="decote"
+      mat-icon-button
+      *ngIf="sidenav.mode === 'over'"
+      (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+      <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    </button>
+    </div> -->
+  
+      <div class="content ">
+        <div class="container">
+                <router-outlet></router-outlet>
+        </div>
+  
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
