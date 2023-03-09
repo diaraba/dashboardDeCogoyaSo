@@ -84,3 +84,21 @@ form .button input{
     background: linear-gradient(135deg,  #6A9A8B, #00754B);
 
 }
+.flexbuttton{
+    display: flex;
+    justify-content: center;
+    span{
+        // height:30px ;
+        // width: 100%;
+        outline: none;
+        color: #fff;
+        padding: 12px;
+        border: none;
+        font-size: 18px;
+        font-weight: 500px;
+        border-radius: 5px;
+        letter-spacing: 1px;
+        background: linear-gradient(-135deg, #C8FCEA, #6A9A8B );
+    
+    }
+}

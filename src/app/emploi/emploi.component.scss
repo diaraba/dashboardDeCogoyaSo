@@ -34,10 +34,17 @@ button {
 
 .gauche{
   border-top-left-radius: 10px;
+  padding-right: 35px;
     }
 
     .droite{
         border-top-right-radius: 10px;
+        padding-left: 35px;
+          }
+
+          .milieu{
+            padding-left: 35px;
+          
           }
 th{
 background-color: #6A9A8B;
@@ -172,6 +179,10 @@ font-weight: 500;
     justify-content: center;
     font-size: 28px;
     font-weight: 400; 
+}
+.me-1{
+  color: #00754B;
+  font-weight: 800;
 }
 .matcard{
     border: 3px solid #6A9A8B;

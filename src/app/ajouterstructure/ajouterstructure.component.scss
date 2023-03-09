@@ -102,6 +102,25 @@
  .containerbutton ion-button p{
      margin-top: 20px;
  }
+
+ .containerbutton p:disabled {
+    background: linear-gradient(-135deg, #C8FCEA, #6A9A8B );
+    opacity: 0.7;
+ }
+
+ form .containerbutton button{
+    height: 100%;
+    // width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg,  #6A9A8B, #00754B);
+
+}
 //////PROFIL AVATAR
 
 .user-avatar {

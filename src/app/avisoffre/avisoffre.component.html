@@ -4,12 +4,18 @@
         <div class="row mb-3 header container mt-2">
             <div class=" col-md-12 row">
                 <mat-card class="col-md-12 mat-elevation-z8 mb-3">
-                    <p class="header_content"><span>200</span> <span> avis offres</span></p>
+                    <p class="header_content"><span class="me-1">{{taille}}</span><span class="me-1">-</span> avis
+                        offres
+                    </p>
                 </mat-card>
-                <button class="menu-button btn btn-outline-success col-md-2" routerLink="/ajoutercompte">
-                    <mat-icon style="color: black;">add</mat-icon>
-                    <span style="color: black;">Ajouter un compte</span>
-                </button>
+
+                <div class="flexdiv">
+                    <button class="menu-button btn btn-outline-success col-md-2" routerLink="/sidebar/ajouteravisoffre">
+                        <mat-icon style="color: black;">add</mat-icon>
+                        <span style="color: black;">Ajouter avis offre</span>
+                    </button>
+                </div>
+
             </div>
 
         </div>
@@ -20,6 +26,7 @@
 
                         <th class="gauche" scope="col">Titre</th>
                         <th scope="col">Cible</th>
+                        <th scope="col">Type avis offre</th>
                         <th scope="col">Date</th>
                         <th class="droite" scope="col">Actions</th>
 
@@ -31,22 +38,34 @@
 
                 <tbody>
 
-                    <tr>
-                        <td>hththththththththththththththththththth</td>
-                        <td> thththththththththththththththththththththt</td>
-                        <td> thththththththththththththththththththththt</td>
-                        <td>
+                    <tr *ngFor="let avisoffre of avisoffres
+                    | paginate : { itemsPerPage: 5, currentPage: pagination }">
+                        <td>{{avisoffre.titre}}</td>
+                        <td> {{avisoffre.cible}}</td>
+                        <td> {{avisoffre.avistype}}</td>
+                        <td> {{avisoffre.date | date:"medium"}}</td>
+
+                        <td style="padding-left: 35px;">
                             <!-- <i class='bx bx-edit bx-tada icon' ></i> -->
-                            <mat-icon class="delete  bx-tada icon">delete</mat-icon>
-                            <mat-icon class="visibility bx-tada icon" routerLink="/sidebar/structuredetails">
+                            <mat-icon class="delete  bx-tada icon" (click)="delete(avisoffre.idavisoffre)">delete
+                            </mat-icon>
+                            <mat-icon class="visibility bx-tada icon"
+                                [routerLink]="['/sidebar/avisoffredetails', avisoffre.idavisoffre]">
                                 visibility
                             </mat-icon>
+                            <mat-icon class="visibility bx-tada icon"
+                                [routerLink]="['/sidebar/modifieravisoffre', avisoffre.idavisoffre]">
+                                edit
+                            </mat-icon>
                         </td>
-
                     </tr>
-
                 </tbody>
             </table>
+            <div class="pag" style="font-size: 18px; color: black;">
+                <pagination-controls (pageChange)="pagination = $event" nextLabel="Suivants" previousLabel="Précedents"
+                    [responsive]="responsive">
+                </pagination-controls>
+            </div>
         </div>
     </div>
 </mat-card>

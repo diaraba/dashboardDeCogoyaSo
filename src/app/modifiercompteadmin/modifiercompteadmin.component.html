@@ -1,0 +1,106 @@
+<div class="annonce col-md-12">
+    <div class="container user-avatar">
+        <div class="simg">
+        </div>
+        <div class="status-overlay ">
+            <label>
+                <i class='bx bx-camera IONic'>
+                    <input id="files" style="visibility:hidden;" type="file" class="form-control" required image
+                        (change)="chargeImage($event)">
+                </i>
+            </label>
+
+        </div>
+    </div>
+    <div class="imageprofile mx-auto  py-3 container">
+        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle position shadow-4"
+            style="width: 150px; height: 150px;" alt="Avatar" />
+    </div>
+
+    <div class="row info" style="margin-top: 40px;">
+        <div class="nom" style="text-align: center;margin-top: 50px; color: black; font-size: 25px;">
+            <b>Créer profil</b>
+        </div>
+
+        <div class="information" style="color:black;margin-top: 40px;margin-bottom: 40px;">
+            <div class="content1">
+                <div class="content-item">
+                    <form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Nom d'utilisateur</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" "
+                                name="nomutilisateur" [(ngModel)]="form.nomutilisateur"required #nomutilisateur="ngModel"
+                                 >
+                            <span class="help-block" *ngIf="nomutilisateur.invalid && nomutilisateur.touched">Entrer email valide.</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=""
+                                name="form.email" [(ngModel)]="form.email" #form.email="ngModel" required ngModel
+                                #email="ngModel">
+                            <span class="help-block" *ngIf="email.invalid && email.touched">Entrer email valide.</span>
+                        </div>
+
+                        <div class="containerbutton button text-center mx-auto">
+                            <input type="submit" value="Envoyer" [disabled]="f.invalid">
+                        </div>
+
+                        <div class="flexbuttton mt-3" (click)="!isForgetpass ? isForgetpass = true : isForgetpass=false">
+                                <span type="button"> Changer mot de passe </span>
+                        </div>
+
+                        <div *ngIf="isForgetpass">
+                            <form action="" #resetForm="ngForm" (ngSubmit)="ModifierMotdepasse()" >
+                                <div class="form-group mb-3">
+                                    <label for="email">Email : </label>
+                                    <input type="email" class="form-control" name="email" placeholder="email@gmail.com" [(ngModel)]="objet.email"
+                                        required ngModel #emailInput="ngModel" />
+                                    <span class="help-block" *ngIf="emailInput.invalid && emailInput.touched">Entrer
+                                        email
+                                        valide.</span>
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label for="currentpassword">Ancien mot de passe : </label>
+                                    <input type="password" class="form-control" name="currentpassword" placeholder="" [(ngModel)]="objet.currentpassword"
+                                        required ngModel #currentpassword="ngModel" />
+                                    <span class="help-block"
+                                        *ngIf="currentpassword.invalid && currentpassword.touched">Entrer mot
+                                        de passe
+                                        valide.</span>
+                                </div>
+
+
+                                <div class="form-group mb-3">
+                                    <label for="newpassword">Nouveau mot de passe : </label>
+                                    <input type="password" class="form-control" name="newpassword" placeholder="" [(ngModel)]="objet.newpassword"
+                                        required ngModel #newpassword="ngModel" />
+                                    <span class="help-block" *ngIf="newpassword.invalid && newpassword.touched">Entrer
+                                        mot
+                                        de passe
+                                        valide.</span>
+                                </div>
+
+
+                                <div class="form-group mb-3 ">
+                                    <label for="confirmpassword">Confirmer mot de passe : </label>
+                                    <input type="password" class="form-control" name="confirmpassword" placeholder="" [(ngModel)]="objet.confirmpassword"
+                                        required ngModel #confirmepassword="ngModel" />
+                                    <span class="help-block"
+                                        *ngIf="confirmepassword.invalid && confirmepassword.touched">Entrer mot
+                                        de passe
+                                        valide.</span>
+                                </div>
+
+                                <div class="containerbutton button text-center mx-auto">
+                                    <input type="submit" value="Réinitialiser" [disabled]="resetForm.invalid">
+                                </div>
+                            </form>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

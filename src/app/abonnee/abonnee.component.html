@@ -1,0 +1,51 @@
+<mat-card class="border container  mat-elevation-z8 mt-5">
+
+    <div class="content">
+        <div class="row mb-3 header container mt-2">
+            <div class=" col-md-12 row">
+                <mat-card class="col-md-12 mat-elevation-z8 mb-3 matcard">
+                    <p class="header_content"><span class="me-1">{{taille}}</span><span  class="me-1">-</span>Abonnées</p>
+                </mat-card>
+            </div>
+
+        </div>
+        <div class="col-md-12 container  mx-auto table-responsive">
+            <table class=" mt-5">
+                <thead>
+                    <tr>
+                        <th class="gauche" scope="col">Nom d'utilisateur</th>
+                        <th scope="col" class="milieu">Email</th>
+                        <th scope="col">Role</th>
+                        <!-- <th scope="col">Statut</th> -->
+                        <th class="droite" scope="col">Actions</th>
+                    </tr>
+
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let utilisateur of utilisateurwithroleemploi
+                    | paginate : { itemsPerPage: 5, currentPage: pagination }">
+                        <td>{{utilisateur.nomutilisateur}}</td>
+                        <td>{{utilisateur.email}}</td>
+                        <td> {{utilisateur.roles[0].name}}</td>
+                        <!-- <td>thththththththththththththththththththththt</td> -->
+                        <td style="padding-left: 35px;">
+                            <!-- <i class='bx bx-edit bx-tada icon' ></i> -->
+                            <mat-icon class="delete  bx-tada icon" (click)="delete(utilisateur.iduser)">delete</mat-icon>
+                            <mat-icon class="visibility bx-tada icon ms-3" [routerLink]="['/sidebar/utilisateurdetails', utilisateur.iduser]">
+                                visibility
+                            </mat-icon>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pag" style="font-size: 18px; color: black;">
+                <pagination-controls (pageChange)="pagination = $event" nextLabel="Suivants" previousLabel="Précedents"
+                    [responsive]="responsive">
+                </pagination-controls>
+            </div>
+        </div>
+    </div>
+</mat-card>

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../sevices/authservice/authentication.service';
 import { LoginService } from '../sevices/login/login.service';
 import { StorageService } from '../sevices/storage/storage.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-connexion',
@@ -34,11 +35,20 @@ export class ConnexionComponent implements OnInit {
     alert(this.form.password);
     this.authservice.login(email, password,).subscribe({
       next: data => {
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Connexion reussi !',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.storageService.saveUser(data);
-
+        console.log(data+"tokentokentokentokentokentokentokentokentokentokentokentokentokentoken")
         this.isLoggedIn = this.storageService.isLoggedIn();
-        if (this.isLoggedIn == true) {
+        if (this.isLoggedIn == true && this.storageService.getUser().roles.includes("ROLE_ADMIN")) {
           this.route.navigate(['/sidebar/dashboard']);
+        }else{
+          this.route.navigate(['/sidebar/accueil']);
         }
       },
       error: err => {
@@ -48,7 +58,20 @@ export class ConnexionComponent implements OnInit {
     });
   }
   onResetpassword(form:any){
-    
+    console.log(form.emails)
+    const email: string = form.emails;
+
+    this.authservice.forgetpassword(email).subscribe({
+      next:data=>{
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Mot de passe changer avec succès!',
+          text: "Veuillez consulter votre boîte mail !",
+          showConfirmButton: false,
+        })
+      }
+    });
   }
 
 }

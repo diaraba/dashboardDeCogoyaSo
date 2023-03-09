@@ -75,15 +75,17 @@
     display: inline-block;
  }
  .champcontent{
-     font-size: 10px;
+     font-size: 18px;
     position: relative;
-    bottom: 10px;
+    // bottom: 10px;
     padding-left:7px ;
+    font-weight: 400!important;
+
  }
  .champcontent1{
     word-wrap: break-word;
-    font-size: 10px;
     padding-left:7px ;
+
  }
  .champ1{
     box-sizing: border-box;
@@ -94,12 +96,13 @@
     margin-bottom: 20px;
     display: inline-block;
     justify-content: stretch;
-    font-weight: bold;
 
  }
  .champtitle{
-     font-size: 18px;
+     font-size: 20px;
      padding-left:7px ;
+     font-weight: 600;
+
  }
  .information{
      position: relative;

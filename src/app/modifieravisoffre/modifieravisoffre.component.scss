@@ -1,0 +1,174 @@
+
+  label{
+    font-size: 18px;
+}
+.choice legend{
+    font-size: 18px;
+}
+input{
+    font-size: 18px;
+    border: 1px solid #6A9A8B;
+}
+textarea{
+  font-size: 18px;
+  border: 1px solid #6A9A8B;
+}
+
+
+.position{
+  width: 100px;
+      height: 100px;
+      border: 3px solid #6A9A8B;
+}
+// ion-item{
+//   border-bottom: 1px solid red;
+// }
+.info{
+
+// background-color: #368E8C;
+
+
+}
+.container{
+padding: 20px;
+}
+span{
+font-size: 14px;
+}
+.ionModif ion-button{
+
+
+margin-left: auto !important;
+margin-right: auto !important;
+margin-top: 15px ;
+background: #ffffff ;
+border: 1px solid #C8FCEA;
+color: color;
+border-radius: 5px;
+}
+
+.annonce{
+   padding: 5px;
+  background: #FFFFFF;
+  
+}
+.ion-content{
+  background: #FFFFFF;
+}
+ion-content.md.content-ltr.hydrated {
+  background: #FFFFFF;
+}
+
+.information{
+   position: relative;
+   bottom: 80px;
+}
+.nom{
+   position: relative;
+   bottom: 60px;
+}
+
+
+.containerbutton{
+   margin-left: 80px;
+   margin-top: 20px;
+   display: flex;
+   justify-content: center;
+}
+.containerbutton ion-button p{
+   margin-top: 20px;
+}
+//////PROFIL AVATAR
+
+.user-avatar {
+  display: inline-block;
+  position: relative;
+  padding-right: 10px;
+  text-align: center;
+}
+
+
+.simg{
+  display: flex;
+  justify-content: center;
+ }
+
+ .position{
+  width: 100px;
+      height: 100px;
+      border: 3px solid #6A9A8B;
+}
+
+.status-overlay {
+  background-color: white;
+  position: absolute;
+  top: 462%;
+  left: 53%;
+  z-index: 1;
+  padding: 0px;
+  height: 35px;
+  width: 35px;
+  border-radius: 30px;
+  border: 1px solid black;
+}
+
+.IONic{
+ cursor: pointer;
+ font-size: 34px;
+ color:#6A9A8B
+}
+.border{
+    border-radius: 5px;
+    border: 3px solid #6A9A8B;
+    width: 25%;
+}
+.border:hover{
+    color:  #FFFFFF;
+    background-color:#6A9A8B ;
+
+}
+.border p{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.selectcadre{
+  color: black; 
+  font-size: 18px;
+  border: 1px solid #6A9A8B;
+  border-radius: 5px;
+
+}
+
+
+////////////////////////Forgot password
+
+
+form .button input:disabled {
+  background: linear-gradient(-135deg, #C8FCEA, #6A9A8B );
+  opacity: 0.7;
+}
+
+span.help-block {
+  color: #6A9A8B;
+}
+
+
+form .button{
+  width:  25%;
+  height: 45px;
+  margin-left: 20%;
+}
+
+form .button input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg,  #6A9A8B, #00754B);
+
+}

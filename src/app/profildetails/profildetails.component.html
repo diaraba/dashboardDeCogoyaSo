@@ -1,10 +1,10 @@
 <div class="annonce">
 
     <div class="imageprofile">
-        <img class="img" src="../../assets/sit.jpg" alt="">
+        <img class="img" src="{{picture}}{{image}}" alt="">
     </div>
     <div class="row info" style="margin-top: 20px;">
-        <div class="nom" style="text-align: center;margin-top: 80px; color: black; font-size: 20px;">
+        <div class="nom" style="text-align: center;margin-top: 65px; color: black; font-size: 20px;">
             <b>Profil Structure</b>
         </div>
 
@@ -36,37 +36,37 @@
         <div class="information " style="color:black;margin-top: 40px;margin-bottom: 40px;">
             <div class="champ">
                 <span class="champtitle">Nom </span> <br>
-                <b class="champcontent"> </b>
+                <span class="champcontent">{{nom}}</span>
             </div>
 
             <div class="champ">
                 <span class="champtitle">Activités </span> <br>
-                <b class="champcontent"></b>
+                <span class="champcontent">{{activite}}</span>
             </div>
 
             <div class="champ">
                 <span class="champtitle">Email </span> <br>
-                <b class="champcontent"> </b>
+                <span class="champcontent">{{email}}</span>
             </div>
 
             <div class="champ">
                 <span class="champtitle">Numéro</span> <br>
-                <b class="champcontent"></b>
+                <span class="champcontent">{{numero}}</span>
             </div>
 
             <div class="champ">
                 <span class="champtitle">Slogan</span> <br>
-                <b class="champcontent"> </b>
+                <span class="champcontent">{{slogan}}</span>
             </div>
 
             <div class="champ">
                 <span class="champtitle">Statut</span> <br>
-                <b class="champcontent"> </b>
+                <span class="champcontent">{{status}}</span>
             </div>
 
             <div class="champ1">
-                <span class="champtitle">Description</span> <br>
-                <p class="champcontent1"></p>
+                <span class="champtitle" style="font-weight: bold;">Description</span> <br>
+                <p class="champcontent1">{{description}}</p>
             </div>
         </div>
     </div>

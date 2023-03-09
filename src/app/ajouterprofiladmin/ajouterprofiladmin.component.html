@@ -1,0 +1,92 @@
+<div class="annonce col-md-12">
+    <div class="container user-avatar">
+        <div class="simg">
+        </div>
+        <div class="status-overlay ">
+            <label>
+                <i class='bx bx-camera IONic'>
+                    <input id="files" style="visibility:hidden;" type="file" class="form-control" required image
+                        (change)="chargeImage($event)">
+                </i>
+            </label>
+
+        </div>
+    </div>
+    <div class="imageprofile mx-auto  py-3 container">
+        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle position shadow-4"
+            style="width: 150px; height: 150px;" alt="Avatar" />
+    </div>
+    <div class="row info" style="margin-top: 40px;">
+        <div class="nom" style="text-align: center;margin-top: 50px; color: black; font-size: 25px;">
+            <b>Créer profil</b>
+        </div>
+        <div class="information" style="color:black;margin-top: 40px;margin-bottom: 40px;">
+            <div class="content1">
+                <div class="content-item">
+                    <form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Nom </label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" "
+                                name="nom" [(ngModel)]="form.nom" required ngModel #nom="ngModel">
+                            <span class="help-block" *ngIf="nom.invalid && nom.touched">Entrer
+                                nom valide.</span>
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Prenom</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" "
+                                name="form.prenom" [(ngModel)]="form.prenom" #form.prenom="ngModel"  required ngModel #prenom="ngModel">
+                                <span class="help-block" *ngIf="prenom.invalid && prenom.touched">Entrer
+                                    prenom valide.</span>
+                        </div>
+
+                        <!-- <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Pseudo</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" "
+                                name="numero" [(ngModel)]="form.numero">
+                        </div> -->
+
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="text" class="form-control" id="email" placeholder=" "
+                                name="email" [(ngModel)]="form.email" required ngModel #email="ngModel">
+                                <span class="help-block" *ngIf="email.invalid && email.touched">Entrer
+                                    email valide.</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="situation" class="form-label">Situation</label>
+                            <input type="text" class="form-control" id="situation" placeholder=" "
+                                name="situation" [(ngModel)]="form.situation" required ngModel #situation="ngModel">
+                                <span class="help-block" *ngIf="situation.invalid && situation.touched">Entrer
+                                    situation valide.</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="numero" class="form-label">Numéro</label>
+                            <input type="text" class="form-control" id="numero" placeholder=" "
+                                name="numero" [(ngModel)]="form.numero" required ngModel #numero="ngModel">
+                                <span class="help-block" *ngIf="numero.invalid && numero.touched">Entrer
+                                    numero valide.</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="genre" class="form-label">Genre</label>
+                            <input type="text" class="form-control" id="genre" placeholder=" "
+                                name="genre" [(ngModel)]="form.genre" required ngModel #genre="ngModel">
+                                <span class="help-block" *ngIf="genre.invalid && genre.touched">Entrer
+                                    genre valide.</span>
+                        </div>
+
+
+                        <div class="containerbutton button text-center mx-auto">
+                            <input type="submit" value="Envoyer" [disabled]="f.invalid">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

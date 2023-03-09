@@ -1,0 +1,94 @@
+<mat-card class="border container  mat-elevation-z8 mt-5">
+
+    <div class="content">{{structures.alias}}
+        <h2></h2>
+        <div class="row mb-3 header container mt-2">
+            <!-- <div class=" "> -->
+                <!-- <mat-card class="col-md-12 mat-elevation-z8 mb-3">
+                    <p class="header_content"><span>200</span> <span> annonces</span></p>
+                </mat-card> -->
+                <button class="menu-button btn btn-outline-success"  [routerLink]="['/sidebar/structuredetails', idstructure]">
+                    <span style="color: #C8FCEA;">Voir detail</span> 
+                    <mat-icon style="color: #C8FCEA;" class="ms-1">visibility</mat-icon>
+
+                </button>
+            <!-- </div> -->
+
+        </div>
+        <div class="col-md-12 container  mx-auto table-responsive">
+            <h2>Annonce</h2>
+            <table class=" mt-1 mb-5">
+                <thead>
+                    <tr>
+
+                        <th class="gauche" scope="col">Titre</th>
+                        <th scope="col" style="padding-left: 15px;">Objet</th>
+                        <th scope="col" style="padding-left: 15px;">Date</th>
+                        <th class="droite" scope="col">Actions</th>
+
+
+                    </tr>
+
+
+                </thead>
+
+                <tbody>
+
+                    <tr  *ngFor="let annonce of annonces">
+                        <td>{{annonce.titre}}</td>
+                        <td style="padding-left: 15px;"> {{annonce.objet}}</td>
+                        <td style="padding-left: 15px;"> {{annonce.date}}</td>
+                        <td>
+                            <!-- <i class='bx bx-edit bx-tada icon' ></i> -->
+                            <mat-icon class="delete  bx-tada icon" (click)="delete1(annonce.idannonce)">delete</mat-icon>
+                            <mat-icon class="visibility bx-tada icon ms-3" [routerLink]="['/sidebar/annoncedetails', annonce.idannonce]">
+                                visibility
+                            </mat-icon>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-12 container  mx-auto table-responsive">
+            <h2>Avis offres</h2>
+            <table class=" mt-1">
+                <thead>
+                    <tr>
+
+                        <th class="gauche" scope="col">Titre</th>
+                        <th scope="col">Cible</th>
+                        <th scope="col">Type avis offre</th>
+                        <th scope="col">Date</th>
+                        <th class="droite" scope="col">Actions</th>
+
+
+                    </tr>
+
+
+                </thead>
+
+                <tbody>
+
+                    <tr *ngFor="let avisoffre of avisoffres">
+                        <td>{{avisoffre.titre}}</td>
+                        <td> {{avisoffre.cible}}</td>
+                        <td> {{avisoffre.typeOffre}}</td>
+                        <td> {{avisoffre.date}}</td>
+                        <td>
+                            <!-- <i class='bx bx-edit bx-tada icon' ></i> -->
+                            <mat-icon class="delete  bx-tada icon" (click)="delete(avisoffre.idavisoffre)">delete</mat-icon>
+                            <mat-icon class="visibility bx-tada icon ms-3" [routerLink]="['/sidebar/avisoffredetails', avisoffre.idavisoffre]">
+                                visibility
+                            </mat-icon>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</mat-card>

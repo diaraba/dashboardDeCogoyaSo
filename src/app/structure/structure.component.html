@@ -1,51 +1,70 @@
-    <mat-card class="border container  mat-elevation-z8 mt-5">
-   
-        <div class="content">
-            <div class="row mb-3 header container mt-2">
-                <div class=" col-md-12 row">
-                    <mat-card class="col-md-12 mat-elevation-z8 mb-3">
-                        <p class="header_content"><span>200</span> <span> structures</span></p>
-                    </mat-card>
-                    <button class="menu-button btn btn-outline-success col-md-2" routerLink="/ajoutercompte">
-                        <mat-icon style="color: black;">add</mat-icon>
-                        <span style="color: black;" routerLink="/sidebar/ajouterstrcuture">Ajouter structure</span>
+<mat-card class="border container  mat-elevation-z8 mt-5">
+
+    <div class="content">
+        <div class="row mb-3 header container mt-2">
+            <div class=" col-md-12 row">
+                <mat-card class="col-md-12 mat-elevation-z8 mb-3">
+                    <p class="header_content"><span class="me-1">{{taille}}</span><span class="me-1">-</span>Structures
+                    </p>
+
+                </mat-card>
+                <div class="flexdiv">
+                    <button class="menu-button btn btn-outline-success col-md-2">
+                        <mat-icon style="color: #FFF;" class="ms-1">add</mat-icon>
+                        <span style="color: #FFF;" routerLink="/sidebar/ajouterstructure">Ajouter structure</span>
+                    </button>
+
+                    <button class="menu-button btn btn-outline-success col-md-2">
+                        <mat-icon style="color: #FFF;" class="ms-1">add</mat-icon>
+                        <span style="color: #FFF;" routerLink="/sidebar/ajouterprofil">Ajouter profil
+                            structure</span>
                     </button>
                 </div>
-
             </div>
-            <div class="col-md-12 container  mx-auto table-responsive">
-                <table class=" mt-5">
-                    <thead>
-                        <tr>
-                            <th class="gauche" scope="col">Alias</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Role</th>
-                            <!-- <th scope="col">Statut</th> -->
-                            <th class="droite" scope="col">Actions</th>
-                        </tr>
+
+        </div>
+        <div class="col-md-12 container  mx-auto table-responsive">
+            <table class=" mt-5">
+                <thead>
+                    <tr>
+                        <th class="gauche" scope="col">Alias</th>
+                        <th scope="col" class="milieu">Email</th>
+                        <th scope="col">Role</th>
+                        <!-- <th scope="col">Statut</th> -->
+                        <th class="droite" scope="col">Actions</th>
+                    </tr>
 
 
-                    </thead>
+                </thead>
 
-                    <tbody>
+                <tbody>
 
-                        <tr>
-                            <td>hththththththththththththththththththth</td>
-                            <td> thththththththththththththththththththththt</td>
-                            <td> thththththththththththththththththththththt</td>
-                            <!-- <td>thththththththththththththththththththththt</td> -->
-                            <td>
-                                <!-- <i class='bx bx-edit bx-tada icon' ></i> -->
-                                <mat-icon class="delete  bx-tada icon">delete</mat-icon>
-                                <mat-icon class="visibility bx-tada icon" routerLink="/sidebar/structuredetails">
-                                    visibility
-                                </mat-icon>
-                            </td>
+                    <tr *ngFor="let structure of structures
+                    | paginate : { itemsPerPage: 5, currentPage: pagination }">
+                        <td>{{structure.alias}}</td>
+                        <td> {{structure.email}}</td>
+                        <td> {{structure.roles[0].name}}</td>
+                        <!-- <td>thththththththththththththththththththththt</td> -->
+                        <td style="padding-left: 35px;">
+                            <!-- <i class='bx bx-edit bx-tada icon' ></i> -->
+                            <mat-icon class="delete  bx-tada icon" (click)="delete(structure.iduser)">delete</mat-icon>
+                            <mat-icon class="visibility bx-tada icon ms-3"
+                                [routerLink]="['/sidebar/structurespace', structure.iduser]">
+                                visibility
+                            </mat-icon>
+                        </td>
 
-                        </tr>
+                    </tr>
 
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
+            <div class="pag" style="font-size: 18px; color: black;">
+                <pagination-controls (pageChange)="pagination = $event" nextLabel="Suivants" previousLabel="Précedents"
+                    [responsive]="responsive">
+                </pagination-controls>
             </div>
         </div>
-    </mat-card>
+        
+    </div>
+    
+</mat-card>

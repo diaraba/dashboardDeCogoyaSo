@@ -1,39 +1,12 @@
 <div class="annonce col-md-12">
 
 
-    <div class="container user-avatar">
 
-        <div class="simg">
-
-            <!-- <ion-avatar class="position">
-            <img alt="Silhouette of a person's head" src="{{picture}}{{profiles.image}}" />
-          </ion-avatar> -->
-        </div>
-        <div class="status-overlay ">
-            <label>
-                <!-- <ion-icon class="IONic" name="camera-outline" color="secondary">
-              <input id="files" style="visibility:hidden;" type="file" class="form-control" required image
-              (change)="chargeImage($event)" >
-            </ion-icon> -->
-                <i class='bx bx-camera IONic'>
-                    <input id="files" style="visibility:hidden;" type="file" class="form-control" required image
-                        (change)="chargeImage($event)">
-                </i>
-            </label>
-
-        </div>
+  <div class="row info" style="margin-top: 40px;">
+    <div class="nom" style="text-align: center;margin-top: 50px; color: black; font-size: 25px;">
+      <b>Créer structure</b>
     </div>
-    <div class="imageprofile mx-auto  py-3 container">
-
-        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle position shadow-4"
-            style="width: 150px; height: 150px;" alt="Avatar" />
-
-    </div>
-    <div class="row info" style="margin-top: 40px;">
-        <div class="nom" style="text-align: center;margin-top: 50px; color: black; font-size: 25px;">
-            <b>Créer structure</b>
-        </div>
-        <!-- <div class="edit">
+    <!-- <div class="edit">
     
           <ion-buttons class="ionModif">
             <ion-button routerLink="/modifierprofil">
@@ -57,105 +30,108 @@
             Modifier compte
           </ion-button> 
         </div> -->
-        <div class="information" style="color:black;margin-top: 40px;margin-bottom: 40px;">
+    <div class="information" style="color:black;margin-top: 40px;margin-bottom: 40px;">
 
 
 
-            <div class="content1">
-                <div class="content-item">
-                    <form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Alias </label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" "
-                                ngModel="" name="nom" [(ngModel)]="form.nom" #nom="ngModel">
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" "
-                                name="form.prenom" [(ngModel)]="form.prenom" #form.prenom="ngModel">
-                        </div>
+      <div class="content1">
+        <div class="content-item">
+          <form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Alias </label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" " ngModel=""
+                name="nom" [(ngModel)]="form.alias" required minlength="3" maxlength="20" #alias="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && alias.errors }">
 
 
-                        <!-- <div class="mb-3">
+              <div class="invalid-feedback" *ngIf="alias.errors && f.submitted">
+                <div *ngIf="alias.errors['required']">L'alias est requis </div>
+                <div *ngIf="alias.errors['minlength']">
+                  L'alias doit être d'au moins de 3 caractères
+                </div>
+                <div *ngIf="alias.errors['maxlength']">
+                  L'alias doit être au plus de 20 caractères
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder=" " name="email"
+                  [(ngModel)]="form.email" required #email="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && email.errors }">
+                <div class="alert alert-danger mt-3" style="color: black; font-size: 18px;"
+                  *ngIf="email.errors && f.submitted">L'email est requis et il doit être valide !</div>
+
+              </div>
+
+
+              <!-- <div class="mb-3">
                   <label for="exampleFormControlInput1" class="form-label">Email address</label>
                   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="{{content.email}}"  name="email" [(ngModel)]="form.email" #form.email="ngModel">
                 </div> -->
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Mot de passe</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" "
-                                name="numero" [(ngModel)]="form.numero">
-                        </div>
-               
-
-                        <label>Role</label>
-                        <div class="mb-3">
-                            <select interface="popover" [(ngModel)]="role" name="role"style="color: black; font-size: 18px;"
-                                class="selectcadre">
-                                <option value="structure" style="color: black; font-size: 18px;">Structure
-                                </option>
-                            </select>
-                        </div>
-
-                        <label>Statut</label>
-                        <div class="mb-3">
-
-                            <select interface="popover"  class="selectcadre" [(ngModel)]="statut" name="statut" style="color: black; font-size: 18px; "
-                                >
-                                <option value="public" style="color: black; font-size: 18px;">Public
-                                </option>
-                                <option value="prive" style="color: black; font-size: 18px;">Privé
-                                </option>
-                            </select>
-                        </div>
-
-
-
-
-                        <div class="choice">
-                            <legend>Activités :</legend>
-
-                            <div>
-                                <input type="checkbox" id="scales" name="scales" (click)="onInterestSelected(null)">
-                                <label for="scales" class="ms-2">INDUSTRIE</label>
-                            </div>
-
-                            <!-- <div>
-                  <input type="checkbox" id="horns" name="horns">
-                  <label for="horns">Formation</label>
+                <div class="mb-3">
+                  <label for="password" class="form-label">Mot de passe</label>
+                  <input type="password" class="form-control" id="password" placeholder=" " name="password"
+                    [(ngModel)]="form.password" placeholder=" " required minlength="6" #password="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
+                  <div class="alert alert-danger mt-3" style="color: black; font-size: 18px;"
+                    *ngIf="email.errors && f.submitted"> Le mot de passe doit être d'au moins de 6 caractères !
+                    !</div>
                 </div>
-        
-                
-                <div>
-                  <input  type="checkbox" id="horns" name="horns">
-                  <label for="horns">Formation</label>
-                </div>
-        
-                
-                <div>
-                  <input  type="checkbox" id="horns" name="horns">
-                  <label for="horns">Formation</label>
-                </div>
-        
-                
-                <div>
-                  <input  type="checkbox" id="horns" name="horns">
-                  <label for="horns">Formation</label>
-                </div> -->
-                        </div>
+
+              <div class="mb-3">
+                <label for="images" class="form-label mb-2">Image</label>
+                <input type="file" class="form-control" id="images" placeholder="" name="images" required images
+                  (change)="chargeImage($event)">
+
+              </div>
+
+              <label>Role</label>
+              <div class="mb-3">
+                <select interface="popover" [(ngModel)]="role" name="role" style="color: black; font-size: 18px;"
+                  class="selectcadre">
+                  <option value="structure" style="color: black; font-size: 18px;">Structure</option>
+                </select>
+              </div>
+
+              <label>Statut</label>
+              <div class="mb-3">
+                <select interface="popover" class="selectcadre" [(ngModel)]="statut" name="statut"
+                  style="color: black; font-size: 18px; ">
+                  <option value="public" style="color: black; font-size: 18px;">Public
+                  </option>
+                  <option value="prive" style="color: black; font-size: 18px;">Privé
+                  </option>
+                </select>
+              </div>
 
 
-                        <div class="containerbutton text-center">
-                            <button type="submit" class="btn btn-outline border">
-                                <p> Envoyer </p>
-                            </button>
-                        </div>
-                    </form>
+
+
+              <div class="choice form-label">
+                <legend>Activités :</legend>
+                <div *ngFor="let activite of allactivites">
+                  <input type="checkbox" id="scales" name="scales" (click)="onactiviteSelected(activite)">
+
+                  <label for="scales" class="ms-2">{{activite.nom}}</label>
                 </div>
+              </div>
+              <!-- <div >
+            </div> -->
+
+
+              <div class="containerbutton text-center mt-5">
+                <button type="submit" class="btn btn-outline border"  [disabled]="f.invalid">
+                  <p> Envoyer </p>
+                </button>
+              </div>
             </div>
-
-
+          </form>
         </div>
+      </div>
+
+
     </div>
+  </div>
 
 </div>

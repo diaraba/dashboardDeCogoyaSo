@@ -18,47 +18,56 @@
   <mat-sidenav-container class="sidebar">
     <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8 py-4"  >
       <img class="avatar mat-elevation-z8" src="../assets/LOGO.png" />
-      <div class="side mr-auto" routerLinkActive="active">
-        <button  mat-button class="menu-button" routerLink="dashboard" >
+      <div class="side mr-auto" >
+        <button  mat-button class="menu-button" routerLink="dashboard" *ngIf="showAdminBoard" routerLinkActive="active">
           <mat-icon>dashboard</mat-icon>
           <span>Tableau de bord</span>
         </button>
   
   
   
-        <button mat-button class="menu-button" routerLink="accueil" *ngIf="!showStructureBoard ">
+        <button mat-button class="menu-button" routerLink="accueil" *ngIf="showStructureBoard " routerLinkActive="active">
           <mat-icon>business</mat-icon>
           <span>Accueil</span>
         </button>
   
-        <button mat-button class="menu-button" routerLink="avisoffre" *ngIf="!showStructureBoard">
+        <button mat-button class="menu-button" routerLink="avisoffre" *ngIf="showStructureBoard" routerLinkActive="active">
           <mat-icon>list_alt</mat-icon>
           <span>Avis offre</span>
         </button>
   
   
-        <button mat-button class="menu-button" routerLink="annonce" *ngIf="!showStructureBoard">
+        <button mat-button class="menu-button" routerLink="annonce" *ngIf="showStructureBoard" routerLinkActive="active">
           <mat-icon>flag</mat-icon>
           <span>Annonce</span>
         </button>
         
-        <button mat-button class="menu-button" routerLink="structure">
+        
+        <button mat-button class="menu-button" routerLink="abonnee" *ngIf="showStructureBoard" routerLinkActive="active">
+          <mat-icon>loyalty</mat-icon>
+          <span>Abonnée</span>
+        </button>
+        <button mat-button class="menu-button" routerLink="structure" *ngIf="showAdminBoard" routerLinkActive="active">
           <mat-icon>people</mat-icon>
           <span>Structure</span>
         </button>
   
-        <button mat-button class="menu-button" routerLink="emploi">
+        <button mat-button class="menu-button" routerLink="emploi" *ngIf="showAdminBoard" routerLinkActive="active">
           <mat-icon>work</mat-icon>
           <span>Emploi</span>
         </button>
-  
-        <button mat-button class="menu-button" routerLink="projet">
+          
+        <button mat-button class="menu-button" routerLink="projet" *ngIf="showAdminBoard" routerLinkActive="active">
           <mat-icon>brightness_high</mat-icon>
           <span>Projet</span>
         </button>
   
-  
-        <button mat-button class="menu-button" routerLink="profil">
+        <button mat-button class="menu-button" routerLink="admin" *ngIf="showAdminBoard" routerLinkActive="active">
+          <mat-icon>laptop</mat-icon>
+          <span>Administrateur</span>
+        </button>
+
+        <button mat-button class="menu-button" routerLink="profil" routerLinkActive="active">
           <mat-icon>account_circle</mat-icon>
           <span>Profil</span>
         </button>

@@ -1,0 +1,90 @@
+<div class="annonce col-md-12">
+   
+    <div class="row info" style="margin-top: 40px;">
+        <div class="nom" style="text-align: center;margin-top: 50px; color: black; font-size: 25px;">
+            <b>Ajouter avis offre</b>
+        </div>
+        <div class="information" style="color:black;margin-top: 40px;margin-bottom: 40px;">
+            <div class="content1">
+                <div class="content-item">
+                    <form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label mb-2">Titre </label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" "
+                                ngModel="" name="nom" [(ngModel)]="form.titre" required #nom="ngModel">
+                            <span class="help-block" *ngIf="nom.invalid && nom.touched">Entrer
+                                nom valide.</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="cible" class="form-label mb-2">Cible</label>
+                            <input type="text" class="form-control" id="cible" placeholder=" "
+                                name="form.cible" [(ngModel)]="form.cible" required #cible="ngModel">
+                            <span class="help-block" *ngIf="cible.invalid && cible.touched">Entrer
+                                activités valide.</span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="conditions" class="form-label mb-2">Conditions</label>
+                            <input type="text" class="form-control" id="conditions" placeholder=" "
+                                name="form.conditions" [(ngModel)]="form.conditions" required #conditions="ngModel">
+                            <span class="help-block" *ngIf="conditions.invalid && conditions.touched">Entrer
+                                activités valide.</span>
+                        </div>
+
+                        <label>Type d'offre</label>
+                        <div class="mb-3">
+                            <select interface="popover" class="selectcadre" [(ngModel)]="form.typeOffre" name="typeOffre"
+                              style="color: black; font-size: 18px; ">
+                              <option value="RECRUITEMENT" style="color: black; font-size: 18px;">Recruitement
+                              </option>
+                              <option value="FINANCEMENT" style="color: black; font-size: 18px;">Financement
+                              </option>
+                            </select>
+                          </div>
+
+                        <div class="mb-3">
+                            <label for="images" class="form-label mb-2">Image</label>
+                            <input type="file" class="form-control" id="images" placeholder="" name="images"
+                              required images (change)="chargeImage($event)">
+                           
+                        </div>
+
+
+                        <!-- <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label mb-2">Numero</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" "
+                                name="numero" [(ngModel)]="form.numero" required #numero="ngModel">
+                            <span class="help-block" *ngIf="numero.invalid && numero.touched">Entrer
+                                numero valide.</span>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="slogan" class="form-label mb-2">Slogan</label>
+                            <input type="text" class="form-control" id="slogan" placeholder=" " name="slogan"
+                                [(ngModel)]="form.slogan" required #slogan="ngModel">
+                            <span class="help-block" *ngIf="slogan.invalid && slogan.touched">Entrer
+                                slogan valide.</span>
+                        </div> -->
+
+
+                        <div class="mb-3">
+                            <div class="form-group">
+                                <label for="description" class="mb-2">Description:</label>
+                                <textarea class="form-control" rows="5" id="description" name="form.description"
+                                    [(ngModel)]="form.description" required #description="ngModel">
+                                </textarea>
+                                <span class="help-block" *ngIf="description.invalid && description.touched">Entrer
+                                        description valide.</span>
+                            </div>
+                        </div>
+                        <div class="containerbutton button text-center mx-auto">
+                            <input type="submit" value="Envoyer" >
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

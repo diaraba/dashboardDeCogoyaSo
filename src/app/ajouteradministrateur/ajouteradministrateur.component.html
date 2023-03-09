@@ -1,0 +1,134 @@
+<div class="annonce col-md-12">
+
+
+
+  <div class="row info" style="margin-top: 40px;">
+    <div class="nom" style="text-align: center;margin-top: 50px; color: black; font-size: 25px;">
+      <b>Créer administrateur</b>
+    </div>
+    <!-- <div class="edit">
+      
+            <ion-buttons class="ionModif">
+              <ion-button routerLink="/modifierprofil">
+                <ion-icon name="create-outline" ></ion-icon>
+                Modifier profil
+              </ion-button>
+            </ion-buttons>
+            
+            <ion-buttons class="ionModif">
+              <ion-button routerLink="/tabs/modifiercompte">
+                <ion-icon name="create-outline"></ion-icon>
+                Modifier compte
+              </ion-button>
+      
+            </ion-buttons>
+             <ion-button>
+              Modifier profil
+            </ion-button>
+      
+            <ion-button>
+              Modifier compte
+            </ion-button> 
+          </div> -->
+    <div class="information" style="color:black;margin-top: 40px;margin-bottom: 40px;">
+
+
+
+      <div class="content1">
+        <div class="content-item">
+          <form name="form" (ngSubmit)="onSubmit()" #f="ngForm">
+            <div class="mb-3">
+              <label for="nomutilisateur" class="form-label" style="color: black;">Nom utilisateur</label>
+              <input type="text" class="form-control" name="nomutilisateur" [(ngModel)]="form.nomutilisateur"
+                placeholder=" " required minlength="3" maxlength="20" #nomutilisateur="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && nomutilisateur.errors }">
+
+
+              <div class="invalid-feedback" *ngIf="nomutilisateur.errors && f.submitted">
+                <div *ngIf="nomutilisateur.errors['required']">Nom utilisateur est requis</div>
+                <div *ngIf="nomutilisateur.errors['minlength']">
+                  Nom utilisateur doit être d'au moins de 3 caractères
+                </div>
+                <div *ngIf="nomutilisateur.errors['maxlength']">
+                  Nom utilisateur doit être au plus de 20 caractères
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder=" " name="email"
+                  [(ngModel)]="form.email" required #email="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && email.errors }">
+                <div class="alert alert-danger mt-3" style="color: black; font-size: 18px;"
+                  *ngIf="email.errors && f.submitted">L'email est requis et il doit être valide !</div>
+
+              </div>
+
+
+              <!-- <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="{{content.email}}"  name="email" [(ngModel)]="form.email" #form.email="ngModel">
+                  </div> -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" id="password" placeholder=" " name="password"
+                  [(ngModel)]="form.password" placeholder=" " required minlength="6" #password="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && password.errors }">
+                <div class="alert alert-danger mt-3" style="color: black; font-size: 18px;"
+                  *ngIf="email.errors && f.submitted"> Le mot de passe doit être d'au moins de 6 caractères !
+                  !</div>
+              </div>
+
+              <!-- <div class="mb-3">
+                <label for="images" class="form-label mb-2">Image</label>
+                <input type="file" class="form-control" id="images" placeholder="" name="images" required images
+                  (change)="chargeImage($event)">
+              </div> -->
+
+              <label>Role</label>
+              <div class="mb-3">
+                <select interface="popover" [(ngModel)]="role" name="role" style="color: black; font-size: 18px;">
+                  class="selectcadre">
+                  <option value="admin" style="color: black; font-size: 18px;">Administrateur</option>
+                </select>
+              </div>
+
+              <!-- <label>Statut</label>
+              <div class="mb-3">
+                <select interface="popover" class="selectcadre" [(ngModel)]="statut" name="statut"
+                  style="color: black; font-size: 18px; ">
+                  <option value="public" style="color: black; font-size: 18px;">Public
+                  </option>
+                  <option value="prive" style="color: black; font-size: 18px;">Privé
+                  </option>
+                </select>
+              </div> -->
+
+
+
+
+              <!-- <div class="choice form-label">
+                <legend>Activités :</legend>
+                <div *ngFor="let activite of allactivites">
+                  <input type="checkbox" id="scales" name="scales" (click)="onactiviteSelected(activite)">
+
+                  <label for="scales" class="ms-2">{{activite.nom}}</label>
+                </div>
+              </div> -->
+
+              <div class="containerbutton text-center mt-5">
+                <button type="submit" class="btn btn-outline border" [disabled]="f.invalid">
+                  <p> Envoyer </p>
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>

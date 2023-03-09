@@ -31,13 +31,19 @@ button {
   margin-right: 8px;
 } */
 
-
 .gauche{
   border-top-left-radius: 10px;
+  padding-right: 35px;
     }
 
     .droite{
         border-top-right-radius: 10px;
+        padding-left: 35px;
+          }
+
+          .milieu{
+            padding-left: 35px;
+          
           }
 th{
 background-color: #6A9A8B;
@@ -83,6 +89,16 @@ font-weight: 500;
   font-size: 18px;
   font-weight: 300;   
 }
+.header_content{
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: 400; 
+}
+.me-1{
+  color: #00754B;
+  font-weight: 800;
+}
 .content{
   position: relative;
   left: 2%;
@@ -119,71 +135,6 @@ button {
 } */
 
 
-.gauche{
-    border-top-left-radius: 10px;
-      }
-
-      .droite{
-          border-top-right-radius: 10px;
-            }
-th{
-  background-color: #6A9A8B;
-  border: none;
-  font-size: 1.25rem!important;
-}
-tr td{
-  border-bottom: black;
-  font-size: 1rem!important;
-  width: fit-content;
-}
-.conatiner{
-}
-.table{
-  width: 85%;
-  position: relative;
-  left: 30px;
-}
-.visibility{
-  color: #00754B;
-  cursor: pointer;
-
-}
-.delete{
-  color: #F8325E;
-  cursor: pointer;
-}
-.update{
-  color: #67C25E;
-  cursor: pointer;
-}
-
-.header{
-    display: flex;
-    justify-content: space-between;
-}
-
-.header_span{
-color:black;
-font-size: 28px;
-font-weight: 500;
-}
-.header_content{
-    display: flex;
-    justify-content: center;
-    font-size: 28px;
-    font-weight: 400;   
-}
 .matcard{
     border: 3px solid #6A9A8B;
-}
-.content{
-    position: relative;
-    left: 2%;
-}
-// .wholetable{
-//     position: relative;
-//     left: 2%;
-// }
-.icon{
-    font-size: 28px;
 }

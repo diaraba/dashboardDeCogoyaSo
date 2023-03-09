@@ -40,3 +40,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .sidebar::-webkit-scrollbar {
   display: none ;
 }
+
+.ngx-pagination .current {
+  padding: 0.1875rem 0.625rem;
+  background: #6A9A8B!important;
+  color: #fefefe;
+  cursor: default;
+}

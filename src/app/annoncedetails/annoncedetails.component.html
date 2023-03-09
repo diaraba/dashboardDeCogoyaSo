@@ -1,37 +1,35 @@
 <mat-card class="container">
-    <div class="divimage container">
-        <img class="imagestructure" alt="rhino standing near grass" src="../../assets/sit.jpg">
+    <div>
+      <div class="divimage container">
+        <img class="imagestructure" alt="rhino standing near grass" src="{{picture}}{{avisoffres.image}}">
+      </div>
+      <div class="maintext1 container mt-3 mb-3">
+        <p style="font-size: 22px;">{{titre}}</p>
+        <!-- <button type="button" class="btn btn-outline-success" routerLink="/sidebar/profildetails">Voir profil</button> -->
+      </div>
     </div>
-
-
-    <div class="container mt-5">
-        <mat-card-title>Séminaire entreprenariat </mat-card-title>
-        <p class="maintext mb-3" style="color: black;">
-            The rhinoceros gets its name from one of its most notable features: its horns.
-            The word rhinoceros come from the Greek words rhino meaning “nose” and ceros meaning “horn.”
-            The number of horns that a rhino has varies on the species.
-            The two African species (the black rhino and the white rhino) and the Sumatran rhino have two horns,
+    <div class="container">
+      <div class="subtitle2">
+        <h2 class="subtitle" style="color: black;">
+          Description:
+        </h2>
+        <p class="maintext mb-1" style="color: black;">
+         {{description}}
         </p>
-
-        <div class="subtitle1 mt-3">
-            <h2 class="subtitle" style="color: black;">
-                Date du poste:
-            </h2>
-            <p class="subtitleContent" style="color: black;">
-
-            </p>
-        </div>
-        <div class="subtitle2">
-            <h2 class="subtitle" style="color: black;">
-                Objet:
-            </h2>
-            <p class="subtitleContent1" style="color: black;">
-
-            </p>
-        </div>
-
-        <div class="location" style="color: black;">
-
-        </div>
+        <h2 class="subtitle" style="color: black;">
+          Date du poste:
+        </h2>
+        <p class="subtitleContent1 mb-1" style="color: black;">
+        {{date | date:"medium"}}
+        </p>
+        <h2 class="subtitle" style="color: black;">
+          Objet:
+        </h2>
+        <p class="subtitleContent mb-1" style="color: black;" >
+        {{objet}}
+        </p>
+      </div>
+      <div class="location" style="color: black;">
+      </div>
     </div>
-</mat-card>
+  </mat-card>

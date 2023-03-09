@@ -19,20 +19,19 @@
 }
 .subtitleContent{
     position: relative;
-        /* text-align: center; */
-    top: 18px;
+    /* text-align: center; */
+    // top: 18px;
     font-size: 18px;    color: black;
 }
 
 .subtitleContent1{
     display: flex;
     position: relative;
-        /* text-align: center; */
-    top: 18px;
+    /* text-align: center; */
+    // top: 18px;
     left: 0px;
     font-size: 18px;
     color: black;
-    
 }
 .maintext{
 display: contents;
@@ -45,9 +44,13 @@ color: black;
 }
 
 .maintext1{
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
     color: black;
     font-weight: 800;
     font-size: 18px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
 }

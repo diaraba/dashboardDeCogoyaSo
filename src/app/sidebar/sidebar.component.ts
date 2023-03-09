@@ -3,10 +3,11 @@ import { ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { delay, filter } from 'rxjs/operators';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { StorageService } from '../sevices/storage/storage.service';
 import { AuthenticationService } from '../sevices/authservice/authentication.service';
+import Swal from 'sweetalert2'
 
 @UntilDestroy()
 @Component({
@@ -24,8 +25,8 @@ export class SidebarComponent implements OnInit {
   showStructureBoard = false;
   router: any;
 
-  constructor(private observer: BreakpointObserver, private storageService: StorageService, private authService:AuthenticationService ) { }
-  ngOnInit():void{
+  constructor(private observer: BreakpointObserver, private storageService: StorageService, private authService:AuthenticationService , private  route:Router) { }
+  ngOnInit():void{ 
     console.log(this.isLoggedIn1)
     
       //this.isLoggedIn=this.storageService.isLoggedIn();
@@ -46,8 +47,19 @@ export class SidebarComponent implements OnInit {
       next: res => {
         console.log(res);
         this.storageService.clean();
-
-        window.location.reload();
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Vous vous étes deconnecter !',
+          showConfirmButton: false,
+          timer: 1500
+        })
+         this.route.navigate(['/connexion']).then(() => {
+          setTimeout(() => {
+            // location.reload();
+          }, 2000);
+        });
+        // window.location.reload();
       },
       error: err => {
         console.log(err);

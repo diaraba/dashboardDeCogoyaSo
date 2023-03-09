@@ -1,28 +1,29 @@
-<div class="annonce">
+<div class="annonce" *ngIf="!showupdateprofile">
 
   <div class="imageprofile">
-    <img class="img" src="../../assets/sit.jpg" alt="">
+    <img class="img" src="{{picture}}{{profilesuser.image}}" alt="">
   </div>
   <div class="row info" style="margin-top: 20px;">
     <div class="nom" style="text-align: center;margin-top: 80px; color: black; font-size: 20px;">
-      <b>Profil Structure</b>
+      <b>Profil Admin</b>
     </div>
     <div class=" col-md-12 row mb-5   header">
       <!-- <mat-card class="col-md-12 mat-elevation-z8 mb-3">
           <p class="header_content"><span>200</span> <span> structures</span></p>
       </mat-card> -->
-      <button class="menu-button btn btn-outline-success col-md-2" routerLink="/ajoutercompte">
-        <mat-icon style="color: black;">add</mat-icon>
+      <button class="menu-button btn btn-outline-success col-md-2" (click)="redirectTo(iduser)">
+        <!-- <mat-icon style="color: black;">add</mat-icon> -->
+        <i class="bi bi-plus-circle me-2 fa-10x" ></i>
         <span style="color: black;">Ajouter profil</span>
       </button>
-
-      <button class="menu-button btn btn-outline-success col-md-2" routerLink="/ajoutercompte">
-        <mat-icon style="color: black;">update</mat-icon>
+      <button class="menu-button btn btn-outline-success col-md-2" routerLink="/sidebar/modifiercompteadmin">
+        <!-- <mat-icon style="color: black;">edit</mat-icon> -->
+        <i class="bi bi-pencil me-2"></i>
         <span style="color: black;">Modifier compte</span>
       </button>
-
-      <button class="menu-button btn btn-outline-success col-md-2" routerLink="/ajoutercompte">
-        <mat-icon style="color: black;">update</mat-icon>
+      <button class="menu-button btn btn-outline-success col-md-2" routerLink="/sidebar/modifierprofiladmin">
+        <!-- <mat-icon style="color: black;">edit</mat-icon> -->
+        <i class="bi bi-pencil me-2"></i>
         <span style="color: black;">Modifier profil</span>
       </button>
     </div>
@@ -55,22 +56,37 @@
     <div class="information col-md-12" style="color:black;margin-top: 40px;margin-bottom: 40px;">
       <div class="champ">
         <span class="champtitle">Nom </span> <br>
-        <b class="champcontent"> </b>
+        <b class="champcontent">{{profilesuser.nom}}</b>
       </div>
 
       <div class="champ">
         <span class="champtitle">Prenom </span> <br>
-        <b class="champcontent"></b>
+        <b class="champcontent">{{profilesuser.prenom}} </b>
       </div>
 
       <div class="champ">
         <span class="champtitle">Pseudo </span> <br>
-        <b class="champcontent"> </b>
+        <b class="champcontent">{{content.nomutilisateur}}</b>
       </div>
 
       <div class="champ">
         <span class="champtitle">Email</span> <br>
-        <b class="champcontent"></b>
+        <b class="champcontent">{{content.email}} </b>
+      </div>
+
+      <div class="champ">
+        <span class="champtitle">Situation</span> <br>
+        <b class="champcontent">{{profilesuser.situation}}</b>
+      </div>
+
+      <div class="champ">
+        <span class="champtitle">Numéro</span> <br>
+        <b class="champcontent">{{profilesuser.numero}} </b>
+      </div>
+
+      <div class="champ">
+        <span class="champtitle">Genre</span> <br>
+        <b class="champcontent">{{profilesuser.genre}}</b>
       </div>
 
       <!-- <div class="champ">
@@ -92,10 +108,10 @@
 
 </div>
 
-<div class="annonce">
+<div class="annonce" *ngIf="showupdateprofile">
 
   <div class="imageprofile">
-    <img class="img" src="../../assets/sit.jpg" alt="">
+    <img class="img" src="{{picture}}{{image}}" alt="">
   </div>
   <div class="row info" style="margin-top: 20px;">
     <div class="nom" style="text-align: center;margin-top: 80px; color: black; font-size: 20px;">
@@ -105,16 +121,19 @@
       <!-- <mat-card class="col-md-12 mat-elevation-z8 mb-3">
           <p class="header_content"><span>200</span> <span> structures</span></p>
       </mat-card> -->
-      <button class="menu-button btn btn-outline-success col-md-2" routerLink="/ajoutercompte">
-        <mat-icon style="color: black;">add</mat-icon>
+      <button class="menu-button btn btn-outline-success col-md-2" (click)="redirectToStructure(iduser)">
+        <!-- <mat-icon style="color: black;">add</mat-icon> -->
+        <i class="bi bi-plus-circle me-2"></i>
         <span style="color: black;">Ajouter profil</span>
       </button>
-      <button class="menu-button btn btn-outline-success col-md-2" routerLink="/ajoutercompte">
-        <mat-icon style="color: black;">update</mat-icon>
+      <button class="menu-button btn btn-outline-success col-md-2" routerLink="/sidebar/modifiercompteadmin">
+        <!-- <mat-icon style="color: black;">edit</mat-icon> -->
+        <i class="bi bi-pencil me-2"></i>
         <span style="color: black;">Modifier compte</span>
       </button>
-      <button class="menu-button btn btn-outline-success col-md-2" routerLink="/ajoutercompte">
-        <mat-icon style="color: black;">update</mat-icon>
+      <button class="menu-button btn btn-outline-success col-md-2" routerLink="/sidebar/modifierprofil">
+        <!-- <mat-icon style="color: black;">edit</mat-icon> -->
+        <i class="bi bi-pencil me-2"></i>
         <span style="color: black;">Modifier profil</span>
       </button>
     </div>
@@ -146,38 +165,44 @@
     </div> -->
     <div class="information col-md-12" style="color:black;margin-top: 40px;margin-bottom: 40px;">
       <div class="champ">
-        <span class="champtitle">Nom </span> <br>
-        <b class="champcontent"> </b>
+        <span class="champtitle">Nom </span>
+        <br>
+        <span class="champcontent">{{nom}}</span>
       </div>
 
       <div class="champ">
-        <span class="champtitle">Activités </span> <br>
-        <b class="champcontent"></b>
+        <span class="champtitle">Activités </span>
+        <br>
+        <span class="champcontent">{{activite}}</span>
       </div>
 
       <div class="champ">
-        <span class="champtitle">Email </span> <br>
-        <b class="champcontent"> </b>
+        <span class="champtitle">Email </span>
+        <br>
+        <span class="champcontent"> {{email}}</span>
       </div>
 
       <div class="champ">
-        <span class="champtitle">Numéro</span> <br>
-        <b class="champcontent"></b>
+        <span class="champtitle">Numéro</span>
+        <br>
+        <span class="champcontent">{{numero}}</span>
       </div>
 
       <div class="champ">
-        <span class="champtitle">Slogan</span> <br>
-        <b class="champcontent"> </b>
+        <span class="champtitle">Slogan</span>
+        <br>
+        <span class="champcontent">{{slogan}} </span>
       </div>
 
       <div class="champ">
-        <span class="champtitle">Statut</span> <br>
-        <b class="champcontent"> </b>
+        <span class="champtitle">Statut</span>
+        <br>
+        <span class="champcontent">{{profiles.structure.roles[0].name}}</span>
       </div>
 
       <div class="champ1">
         <span class="champtitle">Description</span> <br>
-        <p class="champcontent1"></p>
+        <p class="champcontent">{{description}}</p>
       </div>
     </div>
   </div>

@@ -99,10 +99,13 @@ button{
     border-radius: 10px;
     background-color:#C8FCEA;
     margin-top: 20px;
-    height: 40px;
+    height: 31px;
 
 }
-
+.active{
+    background-color: #00754B;
+    color: #FFF;
+}
 
 
 .content {
@@ -129,8 +132,6 @@ mat-sidenav-container {
     align-items: center;
     justify-content: flex-start;
     font-size: 1rem;
-
-   
 }
 .menu-button .mat-icon {
     margin-right: 8px;

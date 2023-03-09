@@ -10,25 +10,30 @@
             <div class=" col-md-6 row">
                 <span class="col-md-12 header_span mb-3"> Nombre total d'utilisateur</span>
                 <mat-card class="col-md-10 mat-elevation-z8 mb-3">
-                    <p class="header_content"><span>200</span> <span> utilisateurs</span></p>
+                    <p class="header_content"><span class="me-1">{{nombreutilisateur}}</span><span
+                            class="me-1">-</span>Utilisateurs</p>
+
                 </mat-card>
             </div>
             <div class="col-md-6 row">
                 <span class="col-md-12 header_span mb-3"> Nombre total de structure</span>
                 <mat-card class="col-md-10 mat-elevation-z8 mb-3">
-                    <p class="header_content "><span>200</span> <span> structure</span></p>
+                    <p class="header_content"><span class="me-1">{{nombrestructure}}</span><span
+                            class="me-1">-</span>Structures</p>
+
                 </mat-card>
             </div>
         </div>
-        <div class=" row col-md-12 container">
+        <div class=" row col-md-12 container mt-5">
             <div class="col-md-12 container  table-responsive">
-                <table class=" mt-5">
+                <span class="col-md-12   mt-5 mb-1" style="font-size: 20px; font-weight: 800;"> Structure</span>
+                <table class="">
                     <thead>
                         <tr>
                             <th class="gauche" scope="col">Alias</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Role</th>
-                            <th scope="col">Statut</th>
+                            <th scope="col" class="milieu">Email</th>
+                            <th scope="col" class="milieu">Role</th>
+                            <th scope="col" class="" style="padding-left: 10px;">Statut</th>
                             <th class="droite" scope="col">Actions</th>
                         </tr>
 
@@ -37,15 +42,19 @@
 
                     <tbody>
 
-                        <tr>
-                            <td>hththththththththththththththththththth</td>
-                            <td> thththththththththththththththththththththt</td>
-                            <td> thththththththththththththththththththththt</td>
-                            <td>hththththththththththththt</td>
-                            <td>
+                        <tr *ngFor="let structure of structures
+                        | paginate : { itemsPerPage: 5, currentPage: pagination }">
+                            <td>{{structure.alias}}</td>
+                            <td> {{structure.email}}</td>
+                            <td> {{structure.roles[0].name}}</td>
+                            <td style="padding-left: 20px;">{{structure.statuts[0].name}}</td>
+                            <!-- {{structure.statuts[0].name}} -->
+                            <td style="padding-left: 35px;">
                                 <!-- <i class='bx bx-edit bx-tada icon' ></i> -->
-                                <mat-icon class="delete  bx-tada icon">delete</mat-icon>
-                                <mat-icon class="visibility bx-tada icon" routerLink="/sidebar/structuredetails">
+                                <mat-icon class="delete  bx-tada icon" (click)="delete(structure.iduser)">delete
+                                </mat-icon>
+                                <mat-icon class="visibility bx-tada icon ms-3"
+                                    [routerLink]="['/sidebar/structurespace', structure.iduser]">
                                     visibility
                                 </mat-icon>
                             </td>
@@ -54,18 +63,24 @@
 
                     </tbody>
                 </table>
+                <div class="pag" style="font-size: 18px; color: black;">
+                    <pagination-controls (pageChange)="pagination = $event" nextLabel="Suivants"
+                        previousLabel="Précedents" [responsive]="responsive">
+                    </pagination-controls>
+                </div>
             </div>
 
 
 
 
-            <div class="col-md-12 container  mx-auto table-responsive">
-                <table class=" mt-5">
+            <div class="col-md-12 container mt-2 mx-auto table-responsive">
+                <span class="col-md-12   mt-5 mb-1" style="font-size: 20px; font-weight: 800;"> Utilisateur</span>
+                <table class=" ">
                     <thead>
                         <tr>
                             <th class="gauche" scope="col">Nom d'utilisateur</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Role</th>
+                            <th scope="col" class="milieu">Email</th>
+                            <th scope="col" class="milieu">Role</th>
                             <!-- <th scope="col">Statut</th> -->
                             <th class="droite" scope="col">Actions</th>
                         </tr>
@@ -75,15 +90,18 @@
 
                     <tbody>
 
-                        <tr>
-                            <td>hththththththththththththththththththth</td>
-                            <td> thththththththththththththththththththththt</td>
-                            <td> thththththththththththththththththththththt</td>
+                        <tr *ngFor="let utilisateur of utilisateurs
+                        | paginate : { itemsPerPage: 5, currentPage: pagination1, id:'test' }  ">
+                            <td>{{utilisateur.nomutilisateur}}</td>
+                            <td>{{utilisateur.email}}</td>
+                            <td> {{utilisateur.roles[0].name}}</td>
                             <!-- <td>thththththththththththththththththththththt</td> -->
-                            <td>
+                            <td style="padding-left: 35px;">
                                 <!-- <i class='bx bx-edit bx-tada icon' ></i> -->
-                                <mat-icon class="delete  bx-tada icon">delete</mat-icon>
-                                <mat-icon class="visibility bx-tada icon" routerLink="/sidebar/structuredetails">
+                                <mat-icon class="delete  bx-tada icon" (click)="delete(utilisateur.iduser)">delete
+                                </mat-icon>
+                                <mat-icon class="visibility bx-tada icon ms-3"
+                                    [routerLink]="['/sidebar/utilisateurdetails', utilisateur.iduser]">
                                     visibility
                                 </mat-icon>
                             </td>
@@ -92,6 +110,11 @@
 
                     </tbody>
                 </table>
+                <div class="pag" style="font-size: 18px; color: black;">
+                    <pagination-controls (pageChange)="pagination1 = $event" nextLabel="Suivants"
+                        previousLabel="Précedents" [responsive]="responsive1" id="test">
+                    </pagination-controls>
+                </div>
             </div>
         </div>
     </div>
